@@ -98,9 +98,28 @@ public class Main {
             System.out.println("Задача 6: В вагоне есть " + freeSeatingPlaces + " свободных сидячих мест и " + standingPlaces + " свободных стоячих мест"); // выводим если первое условие соблюдается
         } else if (passengers >= seatingPositions && passengers < carriageCapacity) { // проверяем количество пассажиров по второму условию
             byte freeStandingPlaces = (byte) (standingPlaces - (passengers - seatingPositions)); // вычисляем количество свободных стоячих мест
-            System.out.println("Задача 6: В вагоне кончились сидячие места, но " + freeStandingPlaces + " стоячих мест еще свободно"); // выводим если второе условие выполняется
+            System.out.println("Задача 6: В вагоне закончились сидячие места, но " + freeStandingPlaces + " стоячих мест еще свободно"); // выводим если второе условие выполняется
         } else {
             System.out.println("Задача 6: Вагон забит до отказа"); // выводим если ни одно из условий не выполняется
+        }
+
+        // Задача 7:
+        // Даны три числа:
+        // int one;
+        // int two;
+        // int three;
+        // С помощью условного оператора и конструкции else напишите программу, которая вычисляет,
+        // какое из трех чисел бо́льшее, и выводит результат в консоль.
+
+        int one = 100;
+        int two = 600;
+        int three = 300;
+        if (one > two && one > three) { // сравниваем число One
+            System.out.println("Задача 7: Большее число One (" + one + ")"); // выводим если условие выполняется
+        } else if (two > one && two > three) { // сравниваем число Two
+            System.out.println("Задача 7: Большее число Two (" + two + ")"); // выводим если условие выполняется
+        } else {
+            System.out.println("Задача 7: Большее число Three (" + three + ")"); // выводим если ни одно из условий не выполнено
         }
     }
 }
