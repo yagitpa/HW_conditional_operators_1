@@ -83,5 +83,24 @@ public class Main {
         } else if (childAge >= 14) { // првоеряем возраст по третьему условию
             System.out.println("Задача 5: Если возраст ребенка равен " + childAge + ", то он может кататься на аттракционе без сопровождения взрослого"); // выводим если третье условие TRUE
         }
+
+        // Задача 6:
+        // Вместимость одного вагона поезда — 102 человека. Вагон рассчитан на 60 сидячих мест, все остальные — стоячие.
+        // С помощью условного оператора и конструкции else напишите программу, которая выводит в консоль сообщение о том,
+        // есть ли место в вагоне, сидячее или стоячее, или вагон уже полностью забит.
+
+        byte carriageCapacity = 102;
+        byte seatingPositions = 60;
+        byte standingPlaces = (byte) (carriageCapacity - seatingPositions); // вычисляем сколько в вагоне стоячих мест
+        byte passengers = 32;
+        if (passengers >= 0 && passengers < seatingPositions) { // проверка количества пассажиров по первому условию
+            byte freeSeatingPlaces = (byte) (seatingPositions - passengers); // проверяем сколько в вагоне свободно сидячих мест
+            System.out.println("Задача 6: В вагоне есть " + freeSeatingPlaces + " свободных сидячих мест и " + standingPlaces + " свободных стоячих мест"); // выводим если первое условие соблюдается
+        } else if (passengers >= seatingPositions && passengers < carriageCapacity) { // проверяем количество пассажиров по второму условию
+            byte freeStandingPlaces = (byte) (standingPlaces - (passengers - seatingPositions)); // вычисляем количество свободных стоячих мест
+            System.out.println("Задача 6: В вагоне кончились сидячие места, но " + freeStandingPlaces + " стоячих мест еще свободно"); // выводим если второе условие выполняется
+        } else {
+            System.out.println("Задача 6: Вагон забит до отказа"); // выводим если ни одно из условий не выполняется
+        }
     }
 }
